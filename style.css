@@ -1,7 +1,11 @@
+html {
+    min-height: 100vh;
+    background: black;
+}
 .container {
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 h1 {
@@ -25,6 +29,12 @@ a {
 h1.mash {
     grid-row: 1/2;
     grid-column: 2/3;
+    top: -30vh;
+    margin-bottom: 0px;
+    position: relative;
+    opacity: 0;
+    animation: topSlide 2s forwards;
+    animation-delay: .5s;
 }
 
 h1 img {
@@ -36,17 +46,42 @@ h1 img {
 }
 
 h1.gravy {
-    grid-row: 3/4;
+    grid-row: 2/3;
     grid-column: 1/2;
+    left: -30vw;
     margin-bottom: 0px;
+    position: relative;
+    opacity: 0;
+    animation: leftSlide 2s forwards;
+    animation-delay: .5s;
 }
 
 h1.turon {
-    grid-row: 3/4;
+    grid-row: 2/3;
     grid-column: 3/4;
+    right: -30vw;
     margin-bottom: 0px;
+    position: relative;
+    opacity: 0;
+    animation: rightSlide 2s forwards;
+    animation-delay: .5s;
 }
 
 h1 img:hover {
 transform: scale(1.4);
+}
+
+@keyframes leftSlide  {
+    100% {left: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes rightSlide  {
+    100% {right: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes topSlide {
+    100% {top: 0};
+    from {opacity: 0} to {opacity: 1}
 }
